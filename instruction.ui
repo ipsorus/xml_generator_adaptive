@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>626</width>
+    <height>582</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/icons/file_xml-512.ico</normaloff>:/icons/file_xml-512.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QListWidget" name="listWidget">
+        <property name="minimumSize">
+         <size>
+          <width>590</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>960</width>
+          <height>1080</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="tabletTracking">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustToContents</enum>
+        </property>
+        <property name="autoScroll">
+         <bool>false</bool>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <property name="textElideMode">
+         <enum>Qt::ElideLeft</enum>
+        </property>
+        <property name="verticalScrollMode">
+         <enum>QAbstractItemView::ScrollPerPixel</enum>
+        </property>
+        <property name="horizontalScrollMode">
+         <enum>QAbstractItemView::ScrollPerItem</enum>
+        </property>
+        <property name="isWrapping" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="resizeMode">
+         <enum>QListView::Adjust</enum>
+        </property>
+        <property name="viewMode">
+         <enum>QListView::ListMode</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="selectionRectVisible">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Краткая инструкция</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Calibri</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Предупреждение:</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>true</underline>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Объем xml-файла, загружаемого в модуль &quot;Поверки&quot;, не должен превышать объем, равный 5 МБ.</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>При формировании xml-файла в программе следует учитывать, что итоговый размер файла зависит не только от количества записей в одном xml-файле, а также от количества вносимой информации в одной записи о поверке СИ.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Сгенерированному xml-файлу с записями автоматически присваивается наименование, в котором содержатся: дата и время, наименование типа СИ,  порядковый номер заявки (part), количество записей в заявке (notes) и условный шифр знака поверки (cifer).</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Сформированные файлы по структуре отвечают требованиям схемы импорта. За корректность сведений в сформированных xml-файлах ответственность несет лицо,  вносившее сведения.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Рекомендации по заполнению формы:</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>true</underline>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1. В поле &quot;Всего СИ в партии&quot; указывается общее количество СИ в партии, для которых создаются записи о поверке.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2. В поле &quot;Поверок в одном файле&quot; указывается количество записей, которое будет сформировано в однм xml-файле (не более 5000 записей).</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>=============================================================================================</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Пример: пользователю необходимо внести сведения о 13000 шт. средств измерений, чтобы в одной заявке содержались сведения о 3000 СИ.</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Пользователь в поле &quot;Всего СИ в партии&quot; указывает 13000, а в поле &quot;Поверок в одном файле&quot; указывает 3000.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>В результате, после нажатия кнопки &quot;Создать xml-файл&quot;, сформируется 5 xml-файлов, 4 файла будут содержать по 3000 записей, 5-й файл - 1000 записей.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>=============================================================================================</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3. Далее необходимо заполнить все обязательные поля, находящиеся во вкладках &quot;Сведения о СИ&quot;, &quot;Сведения о поверке&quot;, &quot;Средства поверки&quot;, &quot;Прочие сведения&quot;.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3.1. Вкладка &quot;Сведения о СИ&quot;.</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    а. Заполнить обязательное поле Тип СИ (Метрологическая аттестация, СИ ВН или СН), подробнее в примечании ниже;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    б. Указать модификацию СИ (если нет информации о модификации, нужно указать &quot;Нет&quot;, &quot;Модификации нет&quot; или что-то подобное);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    в. Заполнить поле &quot;Заводской номер/Буквенно-цифровое обозначение&quot; (пример ниже):</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>=============================================================================================</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Пример: пользователю необходимо внести сведения о партии СИ в количестве 1000 шт. Диапазон заводских номеров начинается с заводского номера А102-Б/Е-000001/2020 и заканчивается номером А102-Б/Е-001000/2020. Изменяемая часть в этом примере является 000001. Также в примере есть неизменяемая часть номера: &quot;А102-Б/Е-&quot;, данная часть указывается в поле &quot;Начало номера до изменяемой части&quot; и &quot;/2020&quot; - эта часть (окончание номера) указывается в поле &quot;Конец номера после изменяемой части&quot;. После заполнения у пользователя должно получится следующее: &quot;А102-Б/Е-&quot;  &quot;000001&quot;   &quot;/2020&quot;. Важное замечание: поле &quot;Изменяемая часть номера&quot; может содержать только числовые значения (возможно указание числа с ведущими нулям, как в примере). </string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>=============================================================================================</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Примечание: для внесения сведений о единственном СИ, необходимо выбрать одну из трех опций:
+− «Тип СИ» для внесения сведений о результатах поверки СИ утвержденного типа, при заполнении поля в данном случае выбирается значение из реестра утвержденных типов СИ ФИФ ОЕИ.
+− «Метрологическая аттестация» для внесения сведений о результатах поверки средства измерений неутвержденного типа, но прошедшего метрологическую аттестацию в соответствии с ГОСТ 8.326-89 «Государственная система обеспечения единства измерений (ГСИ). Метрологическая аттестация средств измерений», в рамках которой на данное СИ была утверждена Методика метрологической аттестации, при заполнении поля в данном случае указывается наименование СИ.
+− «СИ ВН или СН» для внесения сведений о результатах поверки средства измерений военного назначения или специального назначения, при заполнении поля в данном случае указывается наименование типа СИ, а также номер в реестре утвержденных типов СИ раздела ФИФ ОЕИ в области обороны и безопасности государства.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3.2. Вкладка &quot;Сведения о поверке&quot;.</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    а. Указать в поле &quot;Дата поверки&quot; нужную дату, нажав на поле ввода для вызова календаря;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    б. При необходимости можно заполнить поле &quot;Действительна до&quot; (необязательно поле), для этого также нужно нажать на поле ввода для вызова календаря. Важное замечание: дата в поле &quot;Дата поверки&quot; не должна быть большей или равной дате, указанной в поле &quot;Действительна до&quot;;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    в. Обязательно указать в поле &quot;Условный шифр знака поверки организации-поверителя&quot; значение шифра организации, от имени которой публикуются сведения из формируемой заявки (ввод на русском языке);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    г. Заполнить поле &quot;Владелец СИ&quot; (обязательное поле);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    д. Указать наименование методики поверки, в соответствии с которой проводится поверка СИ, не более 128 символов (обязательно поле);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    е. Если имеется необходимость указывать знак поверки на СИ или в паспорте на СИ, нужно проставить галки в соответствующих пунктах (необязательно);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>   ж. Выбрать тип поверки;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    з. При необходимости указать об использовании результатов калибровки;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    и. Если по результатам проведения поверки СИ признано непригодным, выбрать пункт &quot;Непригодно&quot; и указать причину непригодности (обязательное поле);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3.3. Вкладка &quot;Средства поверки&quot;.</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    а. Обязательно заполнить хотя бы одно из полей, указав одно из средств поверки: номер ГПЭ/ номер эталона/ СО, применяемые при поверке/ СИ, применяемые в качестве эталона/ СИ, применяемое при поверке / Вещество (материал);</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    б. В случае проведения поверки без применения средств поверки, необходимо выбрать один из методов поверки из выпадающего списка.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>        При этом заполнение других полей будет недоступно. Чтобы активировать возможность внесения средств поверки в другие поля, необходимо в выпадающем списке &quot;Методы поверки без применения средств поверки&quot; выбрать пустую строку (первая строка в выпадающем списке).</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>        Для внесения нескольких средств поверки в поля &quot;Государственный первичный эталон&quot;, &quot;Эталон единицы величины&quot;, &quot;СИ, применяемое в качестве эталона&quot;, &quot;Вещество (материал), применяемое при поверке&quot;, необходимо разделять записи символом &quot;;&quot; (точка с запятой).</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>        При заполнении полей &quot;Стандартные образцы, применяемые при поверке&quot; и &quot;СИ, применяемые при поверке&quot; для добавления нескольких средств поверки нужно добавить вкладки, нажав кнопку &quot;Добавить&quot; и заполнить нужные поля.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3.4. Вкладка &quot; Прочие сведения&quot;.</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    а. Обязательно заполнить поля в разделе &quot;Условия проведения поверки&quot; (обязательные поля).</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>    б. При проведении поверки в сокращенном объеме, нужно установить галку на пункте &quot;Поверка в сокращенном объеме&quot; и заполнить поле &quot;Краткая характеристика объема поверки&quot;.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>     в. Остальные поля заполняются по необходимости. </string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="text">
+         <string>Закрыть</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

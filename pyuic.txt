@@ -1,0 +1,13 @@
+pyuic5 untitled.ui -o untitled.py
+
+pyuic5 start_logo.ui -o start_logo.py
+
+pyuic5 start_logo_2.ui -o start_logo_2.py
+
+pyuic5 untitled_generator.ui -o untitled_generator.py
+
+pyuic5 instruction.ui -o instruction.py
+
+pyuic5 xml_generator_front.ui -o xml_generator_front.py
+
+

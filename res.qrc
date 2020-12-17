@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>close_red_clicked.png</file>
+    <file>close_red_3.png</file>
+    <file>file_xml-512.ico</file>
+    <file>close_red_hover.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>vniims_logo_2.jpg</file>
+  </qresource>
+</RCC>
