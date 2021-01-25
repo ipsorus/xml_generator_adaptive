@@ -1,0 +1,2 @@
+pyinstaller --onefile --icon=file_xml-512.ico --noconsole xml_generator.py
+pyinstaller --onedir --icon=file_xml-512.ico --noconsole xml_generator.py

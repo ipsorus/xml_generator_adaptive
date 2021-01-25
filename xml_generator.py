@@ -1,9 +1,9 @@
 # Владелец интеллектуальной собственности и разработчик данного программного обеспечения: Лошкарев Вадим Игоревич
-# Программное обеспечение: Генератор файлов в формате XML для партий СИ 
+# Программное обеспечение: Генератор файлов в формате XML для партий СИ
 # e-mail:ipsorus@inbox.ru
 
 #Указатель версии ПО (для заставки и раздела Информация)
-version = "Версия программы: 2.0"
+version = "Версия программы: 2.1"
 
 import sys
 import os
@@ -38,7 +38,7 @@ class Logo(QtWidgets.QWidget, start_logo.Ui_Form):
 
         self.show()
         self.value = 0
-        while self.value <= 1000000:
+        while self.value <= 600000:
             self.value += 1
             QtWidgets.QApplication.processEvents()
         self.close()
@@ -92,7 +92,7 @@ class Calendar(QtWidgets.QMainWindow):
         self.widgetMenu = Menu(lineEdit)
         self.widgetMenu.addAction(self.widgetAction)
         self.toolbutton.setMenu(self.widgetMenu)
-        self.widgetPushButton.clicked.connect(lineEdit.clear)
+        #self.widgetPushButton.clicked.connect(lineEdit.clear)
 
     def setSelectedDate(self, date):
         self.widget.setSelectedDate(date)
@@ -193,8 +193,8 @@ class TabPage_SO(QtWidgets.QWidget):
 class TabPage_SI(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.gridLayout_10 = QtWidgets.QGridLayout(self)
-        self.gridLayout_10.setObjectName("self.gridLayout_10")
+        self.gridLayout_19 = QtWidgets.QGridLayout(self)
+        self.gridLayout_19.setObjectName("self.gridLayout_19")
         self.labelTypeSI = QtWidgets.QLabel("Регистрационный № типа СИ *", self)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -203,7 +203,7 @@ class TabPage_SI(QtWidgets.QWidget):
         font.setWeight(50)
         self.labelTypeSI.setFont(font)
         self.labelTypeSI.setObjectName("self.labelTypeSI")
-        self.gridLayout_10.addWidget(self.labelTypeSI, 0, 0, 1, 1)
+        self.gridLayout_19.addWidget(self.labelTypeSI, 0, 0, 1, 1)
         self.labelZavNumber = QtWidgets.QLabel("Заводской номер *", self)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -212,7 +212,7 @@ class TabPage_SI(QtWidgets.QWidget):
         font.setWeight(50)
         self.labelZavNumber.setFont(font)
         self.labelZavNumber.setObjectName("self.labelZavNumber")
-        self.gridLayout_10.addWidget(self.labelZavNumber, 2, 0, 1, 1)
+        self.gridLayout_19.addWidget(self.labelZavNumber, 2, 0, 1, 1)
         self.labelInventory = QtWidgets.QLabel("Буквенно-цифровое обозначение *", self)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -221,7 +221,7 @@ class TabPage_SI(QtWidgets.QWidget):
         font.setWeight(50)
         self.labelInventory.setFont(font)
         self.labelInventory.setObjectName("self.labelInventory")
-        self.gridLayout_10.addWidget(self.labelInventory, 2, 1, 1, 1)
+        self.gridLayout_19.addWidget(self.labelInventory, 2, 1, 1, 1)
         self.lineEditZavNumber = QtWidgets.QLineEdit(self)
         self.lineEditZavNumber.setMinimumSize(QtCore.QSize(0, 30))
         font = QtGui.QFont()
@@ -233,7 +233,7 @@ class TabPage_SI(QtWidgets.QWidget):
         self.lineEditZavNumber.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.lineEditZavNumber.setClearButtonEnabled(False)
         self.lineEditZavNumber.setObjectName("self.lineEditZavNumber")
-        self.gridLayout_10.addWidget(self.lineEditZavNumber, 3, 0, 1, 1)
+        self.gridLayout_19.addWidget(self.lineEditZavNumber, 3, 0, 1, 1)
         self.lineEditInventory = QtWidgets.QLineEdit(self)
         self.lineEditInventory.setMinimumSize(QtCore.QSize(0, 30))
         font = QtGui.QFont()
@@ -245,7 +245,7 @@ class TabPage_SI(QtWidgets.QWidget):
         self.lineEditInventory.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.lineEditInventory.setClearButtonEnabled(False)
         self.lineEditInventory.setObjectName("self.lineEditInventory")
-        self.gridLayout_10.addWidget(self.lineEditInventory, 3, 1, 1, 1)
+        self.gridLayout_19.addWidget(self.lineEditInventory, 3, 1, 1, 1)
         self.lineEditTypeSI = QtWidgets.QLineEdit(self)
         self.lineEditTypeSI.setMinimumSize(QtCore.QSize(0, 30))
         font = QtGui.QFont()
@@ -257,7 +257,7 @@ class TabPage_SI(QtWidgets.QWidget):
         self.lineEditTypeSI.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.lineEditTypeSI.setClearButtonEnabled(False)
         self.lineEditTypeSI.setObjectName("self.lineEditTypeSI")
-        self.gridLayout_10.addWidget(self.lineEditTypeSI, 1, 0, 1, 2)
+        self.gridLayout_19.addWidget(self.lineEditTypeSI, 1, 0, 1, 2)
 
 class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
     resized = QtCore.pyqtSignal()                                            #Сигнал на изменение размера основного окна программы
@@ -316,6 +316,9 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
         self.tabWidget_2.tabCloseRequested.connect(self.closeTab_SO)
         self.tabWidget_3.tabCloseRequested.connect(self.closeTab_SI)
 
+        self.calendar_vrf.widgetPushButton.clicked.connect(self.vrfDateClear)
+        self.calendar_valid.widgetPushButton.clicked.connect(self.validDateClear)
+
         self.tabCurrIndex = self.tabWidget.currentIndex()                    #запись исходного индекса вкладки (для проверки заполнения таб-ов)
 
         #Проверка на-лету вкладка 1
@@ -332,7 +335,7 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
         self.lineEdit_9.editingFinished.connect(self.dateValidator)
         self.lineEdit_10.editingFinished.connect(self.dateValidator)
         self.lineEdit_11.textChanged.connect(self.check_tab_2)
-        self.lineEdit_14.textChanged.connect(self.check_tab_2)
+        self.lineEdit_13.textChanged.connect(self.check_tab_2)
         #Проверка на-лету вкладка 3
         self.lineEdit_15.textChanged.connect(self.check_tab_3)
         self.lineEdit_16.textChanged.connect(self.check_tab_3)
@@ -356,6 +359,17 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
         self.count_4 = 0
 
 #==========================
+
+    def vrfDateClear(self):
+        self.vrfDate = ''
+        self.lineEdit_9.setText('')
+        self.lineEdit_9.setStyleSheet(style_line)
+
+    def validDateClear(self):
+        self.check_tab_2
+        self.validDate = ''
+        self.lineEdit_10.setText('')
+
     def eventFilter(self, obj, event):
         '''
         Действия Event для полей self.lineEdit_9 и self.lineEdit_10. Для работы с календарями.
@@ -405,6 +419,7 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
                 self.check_tab_2()
             elif sender == self.lineEdit_10:
                 self.validDate = sender.text()
+                self.check_tab_2()
         else:
             try:
                 self.formattedDate = datetime.strptime(sender.text(),'%d.%m.%Y').strftime('%Y-%m-%d')
@@ -428,6 +443,7 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
                 elif sender == self.lineEdit_10:
                     sender.setText(datetime.strptime(self.validDate,'%Y-%m-%d').strftime('%d.%m.%Y'))
                 self.check_tab_2()
+        
     #=============================
     #Служебные функции
     def instruction_page_open(self):
@@ -700,143 +716,143 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
         self.body_part_3 = ''
 
         #Первая часть формируемой заявки
-        self.body_part_1 = f'<result>'+ f'<miInfo>' + f'<singleMI>'
+        self.body_part_1 = f'<gost:result>\n'+ f'<gost:miInfo>\n' + f'<gost:singleMI>\n'
 
         if self.radioButton.isChecked():
-            self.body_part_1 += f'<mitypeNumber>{self.mitypeNumber.strip(" ")}</mitypeNumber>'
+            self.body_part_1 += f'<gost:mitypeNumber>{self.mitypeNumber.strip(" ")}</gost:mitypeNumber>\n'
         elif self.radioButton_2.isChecked():
-            self.body_part_1 += f'<crtmitypeTitle>{self.mitypeNumber.strip(" ")}</crtmitypeTitle>'
+            self.body_part_1 += f'<gost:crtmitypeTitle>{self.mitypeNumber.strip(" ")}</gost:crtmitypeTitle>\n'
         elif self.radioButton_3.isChecked():
-            self.body_part_1 += f'<milmitypeTitle>{self.mitypeNumber.strip(" ")}</milmitypeTitle>'
+            self.body_part_1 += f'<gost:milmitypeTitle>{self.mitypeNumber.strip(" ")}</gost:milmitypeTitle>\n'
 
         #Третья часть формируемой заявки
         if self.manufactureYear != '':
-            self.body_part_3 += f'<manufactureYear>{self.manufactureYear}</manufactureYear>'
+            self.body_part_3 += f'<gost:manufactureYear>{self.manufactureYear}</gost:manufactureYear>\n'
 
-        self.body_part_3 += f'<modification>{self.modification.strip(" ")}</modification>'
+        self.body_part_3 += f'<gost:modification>{self.modification.strip(" ")}</gost:modification>\n'
 
-        self.body_part_3 += f'</singleMI>'
-        self.body_part_3 += f'</miInfo>'
-        self.body_part_3 += f'<signCipher>{self.signCipher.strip(" ")}</signCipher>'
-        self.body_part_3 += f'<miOwner>{self.miOwner.strip(" ")}</miOwner>'
+        self.body_part_3 += f'</gost:singleMI>\n'
+        self.body_part_3 += f'</gost:miInfo>\n'
+        self.body_part_3 += f'<gost:signCipher>{self.signCipher.strip(" ")}</gost:signCipher>\n'
+        self.body_part_3 += f'<gost:miOwner>{self.miOwner.strip(" ")}</gost:miOwner>\n'
 
-        self.body_part_3 += f'<vrfDate>{self.vrfDate}</vrfDate>'
+        self.body_part_3 += f'<gost:vrfDate>{self.vrfDate}</gost:vrfDate>\n'
 
         if self.validDate != '':
-            self.body_part_3 += f'<validDate>{self.validDate}</validDate>'
+            self.body_part_3 += f'<gost:validDate>{self.validDate}</gost:validDate>\n'
 
         if self.radioButton_6.isChecked():
-            self.body_part_3 += f'<type>1</type>'
+            self.body_part_3 += f'<gost:type>1</gost:type>\n'
         else:
-            self.body_part_3 += f'<type>2</type>'
+            self.body_part_3 += f'<gost:type>2</gost:type>\n'
 
-        self.body_part_3 += f'<calibration>{self.calibration}</calibration>'
+        self.body_part_3 += f'<gost:calibration>{self.calibration}</gost:calibration>\n'
         if self.radioButton_8.isChecked():
-            self.body_part_3 += f'<applicable>'
+            self.body_part_3 += f'<gost:applicable>\n'
             if self.stickerNum != '':
-                self.body_part_3 += f'<stickerNum>{self.stickerNum.strip(" ")}</stickerNum>'
-            self.body_part_3 += f'<signPass>{self.signPass}</signPass>'
-            self.body_part_3 += f'<signMi>{self.signMi}</signMi>'
-            self.body_part_3 += f'</applicable>'
+                self.body_part_3 += f'<gost:stickerNum>{self.stickerNum.strip(" ")}</gost:stickerNum>\n'
+            self.body_part_3 += f'<gost:signPass>{self.signPass}</gost:signPass>\n'
+            self.body_part_3 += f'<gost:signMi>{self.signMi}</gost:signMi>\n'
+            self.body_part_3 += f'</gost:applicable>\n'
         else:
-            self.body_part_3 += f'<inapplicable>'
-            self.body_part_3 += f'<reasons>{self.reasons.strip(" ")}</reasons>'
-            self.body_part_3 += f'</inapplicable>'
+            self.body_part_3 += f'<gost:inapplicable>\n'
+            self.body_part_3 += f'<gost:reasons>{self.reasons.strip(" ")}</gost:reasons>\n'
+            self.body_part_3 += f'</gost:inapplicable>\n'
 
-        self.body_part_3 += f'<docTitle>{self.method.strip(" ")}</docTitle>'
+        self.body_part_3 += f'<gost:docTitle>{self.method.strip(" ")}</gost:docTitle>\n'
 
         if self.metrologist != '':
-            self.body_part_3 += f'<metrologist>{self.metrologist.strip(" ")}</metrologist>'
+            self.body_part_3 += f'<gost:metrologist>{self.metrologist.strip(" ")}</gost:metrologist>\n'
 
-        self.body_part_3 += f'<means>'
+        self.body_part_3 += f'<gost:means>\n'
 
         if self.comboBox.currentIndex() == 0:
             if self.npe_number != '':
                 text = self.npe_number.strip(' ')
                 text = text.split(';')
-                self.body_part_3 += f'<npe>'
+                self.body_part_3 += f'<gost:npe>\n'
                 for t in text:
                     if t != '' and not t.isspace():
-                        self.body_part_3 += f'<number>{t.strip(" ")}</number>'
-                self.body_part_3 += f'</npe>'
+                        self.body_part_3 += f'<gost:number>{t.strip(" ")}</gost:number>\n'
+                self.body_part_3 += f'</gost:npe>\n'
 
             if self.uve_number != '':
                 text = self.uve_number.strip(' ')
                 text = text.split(';')
-                self.body_part_3 += f'<uve>'
+                self.body_part_3 += f'<gost:uve>\n'
                 for t in text:
                     if t != '' and not t.isspace():
-                        self.body_part_3 += f'<number>{t.strip(" ")}</number>'
-                self.body_part_3 += f'</uve>'
+                        self.body_part_3 += f'<gost:number>{t.strip(" ")}</gost:number>\n'
+                self.body_part_3 += f'</gost:uve>\n'
 
             if self.tabWidget_2.count() > 1:
-                self.body_part_3 += f'<ses>'
+                self.body_part_3 += f'<gost:ses>\n'
                 for i in range(self.tabWidget_2.count() - 1):
-                    self.body_part_3 += F'<se>'
-                    self.body_part_3 += f'<typeNum>{self.tabWidget_2.widget(i).lineEditType.text().strip(" ")}</typeNum>'
-                    self.body_part_3 += f'<manufactureYear>{self.tabWidget_2.widget(i).spinBoxManufYear.value()}</manufactureYear>'
+                    self.body_part_3 += F'<gost:se>\n'
+                    self.body_part_3 += f'<gost:typeNum>{self.tabWidget_2.widget(i).lineEditType.text().strip(" ")}</gost:typeNum>\n'
+                    self.body_part_3 += f'<gost:manufactureYear>{self.tabWidget_2.widget(i).spinBoxManufYear.value()}</gost:manufactureYear>\n'
                     if self.tabWidget_2.widget(i).lineEditSerialNumber.text() != '' and not self.tabWidget_2.widget(i).lineEditSerialNumber.text().isspace():
-                        self.body_part_3 += f'<manufactureNum>{self.tabWidget_2.widget(i).lineEditSerialNumber.text().strip(" ")}</manufactureNum>'
+                        self.body_part_3 += f'<gost:manufactureNum>{self.tabWidget_2.widget(i).lineEditSerialNumber.text().strip(" ")}</gost:manufactureNum>\n'
                     if self.tabWidget_2.widget(i).lineEditSpecifications.text() != '' and not self.tabWidget_2.widget(i).lineEditSpecifications.text().isspace():
-                        self.body_part_3 += f'<metroChars>{self.tabWidget_2.widget(i).lineEditSpecifications.text().strip(" ")}</metroChars>'
-                    self.body_part_3 += F'</se>'
-                self.body_part_3 += f'</ses>'
+                        self.body_part_3 += f'<gost:metroChars>{self.tabWidget_2.widget(i).lineEditSpecifications.text().strip(" ")}</gost:metroChars>\n'
+                    self.body_part_3 += F'</gost:se>\n'
+                self.body_part_3 += f'</gost:ses>\n'
 
             if self.mieta_number != '':
                 text = self.mieta_number.strip(' ')
                 text = text.split(';')
-                self.body_part_3 += f'<mieta>'
+                self.body_part_3 += f'<gost:mieta>\n'
                 for t in text:
                     if t != '' and not t.isspace():
-                        self.body_part_3 += f'<number>{t.strip(" ")}</number>'
-                self.body_part_3 += f'</mieta>'
+                        self.body_part_3 += f'<gost:number>{t.strip(" ")}</gost:number>\n'
+                self.body_part_3 += f'</gost:mieta>\n'
 
             if self.tabWidget_3.count() > 1:
-                self.body_part_3 += f'<mis>'
+                self.body_part_3 += f'<gost:mis>\n'
                 for i in range(self.tabWidget_3.count() - 1):
-                    self.body_part_3 += F'<mi>'
-                    self.body_part_3 += f'<typeNum>{self.tabWidget_3.widget(i).lineEditTypeSI.text().strip(" ")}</typeNum>'
+                    self.body_part_3 += F'<gost:mi>\n'
+                    self.body_part_3 += f'<gost:typeNum>{self.tabWidget_3.widget(i).lineEditTypeSI.text().strip(" ")}</gost:typeNum>\n'
                     if self.tabWidget_3.widget(i).lineEditZavNumber.text() != '':
-                        self.body_part_3 += f'<manufactureNum>{self.tabWidget_3.widget(i).lineEditZavNumber.text().strip(" ")}</manufactureNum>'
+                        self.body_part_3 += f'<gost:manufactureNum>{self.tabWidget_3.widget(i).lineEditZavNumber.text().strip(" ")}</gost:manufactureNum>\n'
                     elif self.tabWidget_3.widget(i).lineEditInventory.text() != '':
-                        self.body_part_3 += f'<inventoryNum>{self.tabWidget_3.widget(i).lineEditInventory.text().strip(" ")}</inventoryNum>'
-                    self.body_part_3 += F'</mi>'
-                self.body_part_3 += f'</mis>'
+                        self.body_part_3 += f'<gost:inventoryNum>{self.tabWidget_3.widget(i).lineEditInventory.text().strip(" ")}</gost:inventoryNum>\n'
+                    self.body_part_3 += F'</gost:mi>\n'
+                self.body_part_3 += f'</gost:mis>\n'
 
             if self.reagent_number != '':
                 text = self.reagent_number.strip(' ')
                 text = text.split(';')
-                self.body_part_3 += f'<reagent>'
+                self.body_part_3 += f'<gost:reagent>\n'
                 for t in text:
                     if t != '' and not t.isspace():
-                        self.body_part_3 += f'<number>{t.strip(" ")}</number>'
-                self.body_part_3 += f'</reagent>'
+                        self.body_part_3 += f'<gost:number>{t.strip(" ")}</gost:number>\n'
+                self.body_part_3 += f'</gost:reagent>\n'
 
         else:
-            self.body_part_3 += f'<oMethod>{self.oMethod}</oMethod>'
+            self.body_part_3 += f'<gost:oMethod>{self.oMethod}</gost:oMethod>\n'
 
-        self.body_part_3 += f'</means>'
+        self.body_part_3 += f'</gost:means>\n'
 
-        self.body_part_3 += f'<conditions>'
-        self.body_part_3 += f'<temperature>{self.temperature.strip(" ")}</temperature>'
-        self.body_part_3 += f'<pressure>{self.pressure.strip(" ")}</pressure>'
-        self.body_part_3 += f'<hymidity>{self.hymidity.strip(" ")}</hymidity>'
+        self.body_part_3 += f'<gost:conditions>\n'
+        self.body_part_3 += f'<gost:temperature>{self.temperature.strip(" ")} °C</gost:temperature>\n'
+        self.body_part_3 += f'<gost:pressure>{self.pressure.strip(" ")} кПа</gost:pressure>\n'
+        self.body_part_3 += f'<gost:hymidity>{self.hymidity.strip(" ")} %</gost:hymidity>\n'
         if self.other != '':
-            self.body_part_3 += f'<other>{self.other.strip(" ")}</other>'
-        self.body_part_3 += f'</conditions>'
+            self.body_part_3 += f'<gost:other>{self.other.strip(" ")}</gost:other>\n'
+        self.body_part_3 += f'</gost:conditions>\n'
 
         if self.structure != '':
-            self.body_part_3 += f'<structure>{self.structure.strip(" ")}</structure>'
+            self.body_part_3 += f'<gost:structure>{self.structure.strip(" ")}</gost:structure>\n'
 
         if self.checkBox_4.isChecked():
-            self.body_part_3 += f'<brief_procedure>'
-            self.body_part_3 += f'<characteristics>{self.characteristics.strip(" ")}</characteristics>'
-            self.body_part_3 += f'</brief_procedure>'
+            self.body_part_3 += f'<gost:brief_procedure>\n'
+            self.body_part_3 += f'<gost:characteristics>{self.characteristics.strip(" ")}</gost:characteristics>\n'
+            self.body_part_3 += f'</gost:brief_procedure>\n'
 
         if self.additional_info != '':
-            self.body_part_3 += f'<additional_info>{self.additional_info.strip(" ")}</additional_info>'
+            self.body_part_3 += f'<gost:additional_info>{self.additional_info.strip(" ")}</gost:additional_info>\n'
 
-        self.body_part_3 += f'</result>'
+        self.body_part_3 += f'</gost:result>\n'
     #=============================
     def applic_constructor(self, filepath, result, part, counter_zav):
         '''
@@ -852,12 +868,12 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
 
         with open (FileFullPath, 'w', encoding='utf-8') as sample:
 
-            header_1 = f'<?xml version="1.0" encoding="utf-8" ?>'
-            header_comment_1 = f'<!--'
-            header_comment_2 = f'Данный xml-файл создан при помощи ПО "Генератор заявок для партий СИ"'
-            header_comment_3 = f'{version}'#Версия ПО
-            header_comment_4 = f'-->'
-            header_2 = f'<application xmlns="urn://fgis-arshin.gost.ru/module-verifications/import/2020-06-19">'
+            header_1 = f'<?xml version="1.0" encoding="utf-8" ?>\n'
+            header_comment_1 = f'<!--\n'
+            header_comment_2 = f'Данный xml-файл создан при помощи ПО "Генератор заявок для партий СИ"\n'
+            header_comment_3 = f'{version}\n'#Версия ПО
+            header_comment_4 = f'-->\n'
+            header_2 = f'<gost:application xmlns:gost="urn://fgis-arshin.gost.ru/module-verifications/import/2020-06-19">\n'
             header = header_1 + header_comment_1 + header_comment_2 + header_comment_3 + header_comment_4 + header_2
             sample.write(header)
 
@@ -870,9 +886,9 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
 
             #Вторая часть формируемой заявки
             if self.radioButton_4.isChecked():
-                self.body_part_2 += f'<manufactureNum>{manufactureNum}</manufactureNum>'
+                self.body_part_2 += f'<gost:manufactureNum>{manufactureNum}</gost:manufactureNum>\n'
             else:
-                self.body_part_2 += f'<inventoryNum>{manufactureNum}</inventoryNum>'
+                self.body_part_2 += f'<gost:inventoryNum>{manufactureNum}</gost:inventoryNum>\n'
 
             with open (FileFullPath, 'a', encoding='utf-8') as sample_body:
                 self.main_body += self.body_part_1
@@ -884,7 +900,7 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
                 counter_zav += 1
 
         with open (FileFullPath, 'a', encoding='utf-8') as sample:
-            footer = f'</application>'
+            footer = f'</gost:application>\n'
             sample.write(footer)
             #=========================
 
@@ -994,22 +1010,22 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
 
             if (self.radioButton_8.isChecked() and self.method != '' and self.signCipher != '' and self.miOwner != '' and self.vrfDate != '') or (self.radioButton_9.isChecked() and self.reasons != '' and self.method != '' and self.signCipher != '' and self.miOwner != '' and self.vrfDate != ''):
                 self.count_2 = 1
+                if self.validDate != '' and self.vrfDate == self.validDate:
+                    self.label_43.setVisible(True)
+                    self.label_43.setText('Даты не могут быть одинаковыми')
+                    self.line_2.setVisible(True)
+                    self.count_2 = 0
+                elif self.validDate != '' and self.vrfDate > self.validDate:
+                    self.label_43.setVisible(True)
+                    self.label_43.setText('Окончание действия поверки не может наступать раньше ее проведения')
+                    self.line_2.setVisible(True)
+                    self.count_2 = 0
+                else:
+                    self.label_43.setVisible(False)
+                    self.line_2.setVisible(False)
+                    self.count_2 = 1
             else:
                 self.count_2 = 0
-            if self.validDate != '' and self.vrfDate == self.validDate:
-                self.label_43.setVisible(True)
-                self.label_43.setText('Даты не могут быть одинаковыми')
-                self.line_2.setVisible(True)
-                self.count_2 = 0
-            elif self.validDate != '' and self.vrfDate > self.validDate:
-                self.label_43.setVisible(True)
-                self.label_43.setText('Окончание действия поверки не может наступать раньше ее проведения')
-                self.line_2.setVisible(True)
-                self.count_2 = 0
-            else:
-                self.label_43.setVisible(False)
-                self.line_2.setVisible(False)
-                self.count_2 = 1
         else:
             field_tab_2 = {'self.method': [self.method, self.lineEdit_11, self.line_2],
                            'self.vrfDate':[self.vrfDate, self.lineEdit_9, self.line_2],
@@ -1022,22 +1038,23 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
             if (self.radioButton_8.isChecked() and self.method != '' and self.signCipher != '' and self.miOwner != '' and self.vrfDate != '') or (self.radioButton_9.isChecked() and self.reasons != '' and self.method != '' and self.signCipher != '' and self.miOwner != '' and self.vrfDate != ''):
                 self.line_2.setVisible(False)
                 self.count_2 = 1
+                if self.validDate != '' and self.vrfDate == self.validDate:
+                    self.label_43.setVisible(True)
+                    self.label_43.setText('Даты не могут быть одинаковыми')
+                    self.line_2.setVisible(True)
+                    self.count_2 = 0
+                elif self.validDate != '' and self.vrfDate > self.validDate:
+                    self.label_43.setVisible(True)
+                    self.label_43.setText('Окончание действия поверки не может наступать раньше ее проведения')
+                    self.line_2.setVisible(True)
+                    self.count_2 = 0
+                else:
+                    self.label_43.setVisible(False)
+                    self.line_2.setVisible(False)
+                    self.count_2 = 1
             else:
                 self.line_2.setVisible(True)
                 self.count_2 = 0
-            if self.validDate != '' and self.vrfDate == self.validDate:
-                self.label_43.setVisible(True)
-                self.label_43.setText('Даты не могут быть одинаковыми')
-                self.line_2.setVisible(True)
-                self.count_2 = 0
-            elif self.validDate != '' and self.vrfDate > self.validDate:
-                self.label_43.setVisible(True)
-                self.label_43.setText('Окончание действия поверки не может наступать раньше ее проведения')
-                self.line_2.setVisible(True)
-                self.count_2 = 0
-            else:
-                self.label_43.setVisible(False)
-                self.count_2 = 1
 
         self.start_to_create_application()
     #=============================
@@ -1248,6 +1265,8 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
         elif sender == self.lineEdit_29 and not type(self.counter_zav_number) is int:
             self.check_zav_number_is_int(self.lineEdit_29)
             sender.setStyleSheet(style_line)
+        if sender == self.lineEdit_10:
+            sender.setStyleSheet('')
     #=============================
     def start_to_create_application(self):
         '''

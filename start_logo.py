@@ -123,7 +123,7 @@ class Ui_Form(object):
         self.label_4.setStyleSheet(_translate("Form", "color: rgb(255, 255, 255)"))
         self.label_4.setText(_translate("Form", "Программа распространяется бесплатно"))
         self.label_2.setText(_translate("Form", "Версия программы: 2.0"))
-        self.label_3.setText(_translate("Form", "© Разработка и сопровождение ФГУП \"ВНИИМС\". 2020."))
+        self.label_3.setText(_translate("Form", "© Разработка и сопровождение ФГУП \"ВНИИМС\". 2021."))
         self.label_5.setText(_translate("Form", "Генератор файлов в формате XML"))
         self.label_6.setText(_translate("Form", "для партий средств измерений"))
 

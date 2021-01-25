@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>887</width>
-    <height>676</height>
+    <width>760</width>
+    <height>680</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -35,7 +35,7 @@
    <string>Генератор xml-файлов для партий СИ</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="res.qrc">
+   <iconset resource="../new/res.qrc">
     <normaloff>:/icons/file_xml-512.ico</normaloff>:/icons/file_xml-512.ico</iconset>
   </property>
   <property name="animated">
@@ -52,6 +52,9 @@
     <enum>Qt::ClickFocus</enum>
    </property>
    <layout class="QGridLayout" name="gridLayout_20">
+    <item row="2" column="0">
+     <widget class="QWidget" name="widget_2" native="true"/>
+    </item>
     <item row="0" column="0">
      <widget class="QWidget" name="widget_header" native="true">
       <property name="sizePolicy">
@@ -117,7 +120,7 @@
           <number>1</number>
          </property>
          <property name="maximum">
-          <number>400000</number>
+          <number>500000</number>
          </property>
         </widget>
        </item>
@@ -191,7 +194,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Максимально 400000 записей</string>
+          <string>Максимально 500000 записей</string>
          </property>
         </widget>
        </item>
@@ -210,9 +213,6 @@
        </item>
       </layout>
      </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QWidget" name="widget_2" native="true"/>
     </item>
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
@@ -1246,6 +1246,109 @@
         <string>Средства поверки</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
+        <item row="2" column="0">
+         <widget class="Line" name="line_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QComboBox" name="comboBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+          <property name="maxVisibleItems">
+           <number>5</number>
+          </property>
+          <property name="maxCount">
+           <number>5</number>
+          </property>
+          <property name="modelColumn">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>поверка имитационным методом</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>самоповерка</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>поверка расчетным методом</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>поверка с использованием первичной референтной методики измерений</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_24">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: red;</string>
+          </property>
+          <property name="text">
+           <string>Необходимо заполнить хотя бы одно поле</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_44">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Методы поверки без применения средств поверки</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QToolBox" name="toolBox">
           <property name="sizePolicy">
@@ -1288,7 +1391,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>845</width>
+             <width>718</width>
              <height>162</height>
             </rect>
            </property>
@@ -1470,7 +1573,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>845</width>
+             <width>718</width>
              <height>180</height>
             </rect>
            </property>
@@ -1811,8 +1914,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>376</width>
-             <height>28</height>
+             <width>718</width>
+             <height>180</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1852,13 +1955,6 @@
                 <string>СИ</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_19">
-                <item row="0" column="0" colspan="2">
-                 <widget class="QLabel" name="label_36">
-                  <property name="text">
-                   <string>Регистрационный № типа СИ *</string>
-                  </property>
-                 </widget>
-                </item>
                 <item row="1" column="0" colspan="2">
                  <widget class="QLineEdit" name="lineEdit_32">
                   <property name="minimumSize">
@@ -1878,13 +1974,6 @@
                   </property>
                   <property name="maxLength">
                    <number>32</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_37">
-                  <property name="text">
-                   <string>Заводской номер *</string>
                   </property>
                  </widget>
                 </item>
@@ -1917,6 +2006,13 @@
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="label_36">
+                  <property name="text">
+                   <string>Регистрационный № типа СИ *</string>
+                  </property>
+                 </widget>
+                </item>
                 <item row="3" column="1">
                  <widget class="QLineEdit" name="lineEdit_31">
                   <property name="minimumSize">
@@ -1936,6 +2032,13 @@
                   </property>
                   <property name="maxLength">
                    <number>64</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_37">
+                  <property name="text">
+                   <string>Заводской номер *</string>
                   </property>
                  </widget>
                 </item>
@@ -2036,109 +2139,6 @@
             </item>
            </layout>
           </widget>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_44">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Методы поверки без применения средств поверки</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="Line" name="line_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_24">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: red;</string>
-          </property>
-          <property name="text">
-           <string>Необходимо заполнить хотя бы одно поле</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QComboBox" name="comboBox">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
-          </property>
-          <property name="maxVisibleItems">
-           <number>5</number>
-          </property>
-          <property name="maxCount">
-           <number>5</number>
-          </property>
-          <property name="modelColumn">
-           <number>0</number>
-          </property>
-          <item>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>поверка имитационным методом</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>самоповерка</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>поверка расчетным методом</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>поверка с использованием первичной референтной методики измерений</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>
@@ -2617,7 +2617,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>887</width>
+     <width>760</width>
      <height>21</height>
     </rect>
    </property>
@@ -2650,7 +2650,7 @@
   </action>
  </widget>
  <resources>
-  <include location="res.qrc"/>
+  <include location="../new/res.qrc"/>
  </resources>
  <connections/>
  <buttongroups>
