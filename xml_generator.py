@@ -3,7 +3,7 @@
 # e-mail:ipsorus@inbox.ru
 
 #Указатель версии ПО (для заставки и раздела Информация)
-version = "Версия программы: 2.1"
+version = "Версия программы: 2.2"
 
 import sys
 import os
@@ -38,7 +38,7 @@ class Logo(QtWidgets.QWidget, start_logo.Ui_Form):
 
         self.show()
         self.value = 0
-        while self.value <= 600000:
+        while self.value <= 400000:
             self.value += 1
             QtWidgets.QApplication.processEvents()
         self.close()
