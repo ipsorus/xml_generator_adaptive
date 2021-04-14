@@ -134,7 +134,7 @@
     <string notr="true">color: rgb(255, 255, 255)</string>
    </property>
    <property name="text">
-    <string>© Разработка и сопровождение ФГУП &quot;ВНИИМС&quot;. 2020.</string>
+    <string>© Разработка и сопровождение ФГУП &quot;ВНИИМС&quot;. 2021.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

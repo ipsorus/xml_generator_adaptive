@@ -456,7 +456,7 @@
            <enum>Qt::ClickFocus</enum>
           </property>
           <property name="text">
-           <string>СИ ВН или СН *</string>
+           <string>Наименование СИ, поступ. в экспл. до 01.06.1993 *</string>
           </property>
           <attribute name="buttonGroup">
            <string notr="true">buttonGroup</string>
@@ -547,7 +547,7 @@
            <enum>Qt::ClickFocus</enum>
           </property>
           <property name="text">
-           <string>Тип СИ *</string>
+           <string>Тип СИ в реестре ФИФ ОЕИ *</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -693,7 +693,7 @@
            <enum>Qt::ClickFocus</enum>
           </property>
           <property name="text">
-           <string>Метрологическая аттестация *</string>
+           <string>Наименование СИ (ГОСТ 8.326) *</string>
           </property>
           <attribute name="buttonGroup">
            <string notr="true">buttonGroup</string>
@@ -1573,8 +1573,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>718</width>
-             <height>180</height>
+             <width>508</width>
+             <height>28</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1914,8 +1914,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>718</width>
-             <height>180</height>
+             <width>376</width>
+             <height>28</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2302,7 +2302,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Относительная влажность, % *</string>
+              <string>Относительная влажность *</string>
              </property>
             </widget>
            </item>
@@ -2317,7 +2317,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Температура, °C *</string>
+              <string>Температура *</string>
              </property>
             </widget>
            </item>
@@ -2332,7 +2332,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Атмосферное давление, кПа *</string>
+              <string>Атмосферное давление *</string>
              </property>
             </widget>
            </item>

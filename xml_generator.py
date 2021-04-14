@@ -708,7 +708,7 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
     def collecting_data(self):
         '''
         Функция создана с целью оптимизации процесса формирования файлов,
-        т.к. единожды записывает все данные в переменные (self.body_part_1, self.body_part_2 - для записи изменяемой части зав. номера, self.body_part_3) 
+        т.к. единожды записывает все данные в переменные (self.body_part_1, self.body_part_2 - для записи изменяемой части зав. номера, self.body_part_3)
         и далее в цикле уже подставляет готовые данные, вместо постоянного прохода по строкам и дозапись в переменную self.main_body
         '''
 
@@ -834,9 +834,9 @@ class main_window(QtWidgets.QMainWindow, xml_generator_front.Ui_MainWindow):
         self.body_part_3 += f'</gost:means>\n'
 
         self.body_part_3 += f'<gost:conditions>\n'
-        self.body_part_3 += f'<gost:temperature>{self.temperature.strip(" ")} °C</gost:temperature>\n'
-        self.body_part_3 += f'<gost:pressure>{self.pressure.strip(" ")} кПа</gost:pressure>\n'
-        self.body_part_3 += f'<gost:hymidity>{self.hymidity.strip(" ")} %</gost:hymidity>\n'
+        self.body_part_3 += f'<gost:temperature>{self.temperature.strip(" ")}</gost:temperature>\n'
+        self.body_part_3 += f'<gost:pressure>{self.pressure.strip(" ")}</gost:pressure>\n'
+        self.body_part_3 += f'<gost:hymidity>{self.hymidity.strip(" ")}</gost:hymidity>\n'
         if self.other != '':
             self.body_part_3 += f'<gost:other>{self.other.strip(" ")}</gost:other>\n'
         self.body_part_3 += f'</gost:conditions>\n'

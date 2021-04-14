@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'start_logo_2.ui'
+# Form implementation generated from reading ui file 'start_logo.ui'
 #
 # Created by: PyQt5 UI code generator 5.9.2
 #
